@@ -1,0 +1,14 @@
+# Ignore CLion build directory
+/cmake-build-*/
+
+# Ignore CLion workspace settings (optional, IDE metadata)
+/.idea/
+
+# Ignore executables (in case you build in project root)
+*.exe
+*.out
+*.o
+
+# Ignore Mac/Linux temp files (optional but useful)
+.DS_Store
+*.swp
