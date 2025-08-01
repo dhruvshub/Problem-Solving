@@ -7,7 +7,6 @@ using namespace std;
 int primeFactor(long number, int* arr) {
     int index = 0;
     while (number % 2 == 0) {
-        // cout << 2 << endl;
         arr[index] = 2;
         index+=1;
         number = number / 2;
@@ -15,7 +14,6 @@ int primeFactor(long number, int* arr) {
 
     for (int i=3;i*i<number;i+=2) {
         while (number % i == 0) {
-            // cout << i << endl;
             arr[index] = i;
             index+=1;
             number = number / i;
@@ -23,7 +21,6 @@ int primeFactor(long number, int* arr) {
     }
 
     if (number>2) {
-        // cout << number << endl;
         arr[index] = number;
         index+=1;
     }
