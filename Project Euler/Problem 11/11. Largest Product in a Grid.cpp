@@ -1,5 +1,6 @@
+// Problem Link: // Problem Link: https://projecteuler.net/problem=11
+
 #include <iostream>
-#include <vector>
 #include <string>
 #include <sstream>
 
@@ -36,13 +37,185 @@ int main() {
         }
     }
 
-    cout << "The 20x20 grid is:\n";
-    for (int i = 0; i < 20; ++i) {
-        for (int j = 0; j < 20; ++j) {
-            cout << grid[i][j] << "\t";
-        }
-        cout << "\n";
-    }
+    int max_product = 0;
+    int product = 0;
 
+    for (int row =0; row<20;++row){
+        for (int col = 0; col<20;++col) {
+            // Handling the edge cases
+            if (row<3) {
+                if (col>=3 && col<=16) {
+                    // Left Checking
+                    product = grid[row][col]*grid[row][col+1]*grid[row][col+2]*grid[row][col+3];
+                    if (product > max_product) {
+                        max_product = product;
+                    }
+                    // Right Checking
+                    product = grid[row][col]*grid[row][col+1]*grid[row][col+2]*grid[row][col+3];
+                    if (product > max_product) {
+                        max_product = product;
+                    }
+                    // Bottom Checking
+                    product = grid[row][col]*grid[row+1][col]*grid[row+2][col]*grid[row+3][col];
+                    if (product > max_product) {
+                        max_product = product;
+                    }
+                    // Bottom-Left Diagonal Checking
+                    product = grid[row][col]*grid[row+1][col-1]*grid[row+2][col-2]*grid[row+3][col-3];
+                    if (product > max_product) {
+                        max_product = product;
+                    }
+                    // Bottom-Right Diagonal Checking
+                    product = grid[row][col]*grid[row+1][col+1]*grid[row+2][col+2]*grid[row+3][col+3];
+                    if (product > max_product) {
+                        max_product = product;
+                    }
+                }
+            }
+            if (row>16) {
+                if (col>=3 && col<=16) {
+                    // Left Checking
+                    product = grid[row][col]*grid[row][col+1]*grid[row][col+2]*grid[row][col+3];
+                    if (product > max_product) {
+                        max_product = product;
+                    }
+                    // Right Checking
+                    product = grid[row][col]*grid[row][col+1]*grid[row][col+2]*grid[row][col+3];
+                    if (product > max_product) {
+                        max_product = product;
+                    }
+                    // Top Checking
+                    product = grid[row][col]*grid[row-1][col]*grid[row-2][col]*grid[row-3][col];
+                    if (product > max_product) {
+                        max_product = product;
+                    }
+                    // Top-Left Diagonal Checking
+                    product = grid[row][col]*grid[row-1][col-1]*grid[row-2][col-2]*grid[row-3][col-3];
+                    if (product > max_product) {
+                        max_product = product;
+                    }
+                    // Top-Right Diagonal Checking
+                    product = grid[row][col]*grid[row-1][col+1]*grid[row-2][col+2]*grid[row-3][col+3];
+                    if (product > max_product) {
+                        max_product = product;
+                    }
+                }
+            }
+            if (col<3) {
+                if (row >= 3 && row<= 16) {
+                    // Top Checking
+                    product = grid[row][col]*grid[row-1][col]*grid[row-2][col]*grid[row-3][col];
+                    if (product > max_product) {
+                        max_product = product;
+                    }
+                    // Bottom Checking
+                    product = grid[row][col]*grid[row+1][col]*grid[row+2][col]*grid[row+3][col];
+                    if (product > max_product) {
+                        max_product = product;
+                    }
+                    // Top-Right Diagonal Checking
+                    product = grid[row][col]*grid[row-1][col+1]*grid[row-2][col+2]*grid[row-3][col+3];
+                    if (product > max_product) {
+                        max_product = product;
+                    }
+                    // Right Checking
+                    product = grid[row][col]*grid[row][col+1]*grid[row][col+2]*grid[row][col+3];
+                    if (product > max_product) {
+                        max_product = product;
+                    }
+                    // Bottom-Right Diagonal Checking
+                    product = grid[row][col]*grid[row+1][col+1]*grid[row+2][col+2]*grid[row+3][col+3];
+                    if (product > max_product) {
+                        max_product = product;
+                    }
+                }
+            }
+            if (col>16) {
+                if (row >= 3 && row<= 16) {
+                    // Left Checking
+                    product = grid[row][col]*grid[row][col-1]*grid[row][col-2]*grid[row][col-3];
+                    if (product > max_product) {
+                        max_product = product;
+                    }
+                    // Top Checking
+                    product = grid[row][col]*grid[row-1][col]*grid[row-2][col]*grid[row-3][col];
+                    if (product > max_product) {
+                        max_product = product;
+                    }
+
+                    // Bottom Checking
+                    product = grid[row][col]*grid[row+1][col]*grid[row+2][col]*grid[row+3][col];
+                    if (product > max_product) {
+                        max_product = product;
+                    }
+
+                    // Top-Left Diagonal Checking
+                    product = grid[row][col]*grid[row-1][col-1]*grid[row-2][col-2]*grid[row-3][col-3];
+                    if (product > max_product) {
+                        max_product = product;
+                    }
+
+                    // Bottom-Left Diagonal Checking
+                    product = grid[row][col]*grid[row+1][col-1]*grid[row+2][col-2]*grid[row+3][col-3];
+                    if (product > max_product) {
+                        max_product = product;
+                    }
+                }
+            }
+            // Handling the normal cases
+            if (row >= 3 && row<= 16) {
+                if (col>=3 && col<=16) {
+                    // Left Checking
+                    product = grid[row][col]*grid[row][col-1]*grid[row][col-2]*grid[row][col-3];
+                    if (product > max_product) {
+                        max_product = product;
+                    }
+
+                    // Right Checking
+                    product = grid[row][col]*grid[row][col+1]*grid[row][col+2]*grid[row][col+3];
+                    if (product > max_product) {
+                        max_product = product;
+                    }
+
+                    // Top Checking
+                    product = grid[row][col]*grid[row-1][col]*grid[row-2][col]*grid[row-3][col];
+                    if (product > max_product) {
+                        max_product = product;
+                    }
+
+                    // Bottom Checking
+                    product = grid[row][col]*grid[row+1][col]*grid[row+2][col]*grid[row+3][col];
+                    if (product > max_product) {
+                        max_product = product;
+                    }
+
+                    // Top-Left Diagonal Checking
+                    product = grid[row][col]*grid[row-1][col-1]*grid[row-2][col-2]*grid[row-3][col-3];
+                    if (product > max_product) {
+                        max_product = product;
+                    }
+
+                    // Top-Right Diagonal Checking
+                    product = grid[row][col]*grid[row-1][col+1]*grid[row-2][col+2]*grid[row-3][col+3];
+                    if (product > max_product) {
+                        max_product = product;
+                    }
+
+                    // Bottom-Left Diagonal Checking
+                    product = grid[row][col]*grid[row+1][col-1]*grid[row+2][col-2]*grid[row+3][col-3];
+                    if (product > max_product) {
+                        max_product = product;
+                    }
+
+                    // Bottom-Right Diagonal Checking
+                    product = grid[row][col]*grid[row+1][col+1]*grid[row+2][col+2]*grid[row+3][col+3];
+                    if (product > max_product) {
+                        max_product = product;
+                    }
+                }
+            }
+        }
+    }
+    cout << max_product;
     return 0;
 }
