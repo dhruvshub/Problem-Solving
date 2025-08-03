@@ -1,4 +1,4 @@
-// Problem Link: // Problem Link: https://projecteuler.net/problem=11
+// Problem Link: https://projecteuler.net/problem=11
 
 #include <iostream>
 #include <string>
