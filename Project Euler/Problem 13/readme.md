@@ -13,6 +13,7 @@ Imagine adding:
 ------
 ------
 ```
-Firstly we take the one's column and add (9+6+3), write 8 and carry 1 forward; And so on till the last digit.
+Firstly we take the one's column and add (9+6+3), write 8 and carry 1 forward; And so on till the last column.
+
 
 This is precisely what I am doing. I stored the digits in reverse order for the ease of implementation.

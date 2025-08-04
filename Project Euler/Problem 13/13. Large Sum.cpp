@@ -132,7 +132,6 @@ int main() {
     reverse(result.begin(), result.end());
     for (int i = 0; i < 10; ++i)
         cout << result[i];
-
     cout << endl;
     return 0;
 }
