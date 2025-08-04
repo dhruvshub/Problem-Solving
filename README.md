@@ -1,4 +1,4 @@
-# Cpp
+# Problem Solving
 
 This is a repository where I will upload my solutions to the problems that I have done on various platforms like Project Euler,
 LeetCode, etc.
