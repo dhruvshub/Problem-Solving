@@ -19,7 +19,7 @@ file(GLOB_RECURSE ALL_CPP_FILES
         "CodeForces/Round */Problem */*.cpp"
         "Awesome Cpp Projects/*/*.cpp"
 )
-add_executable(TestPrimeFactor "Project Euler/Problem 3/3. Largest Prime Factor.cpp")
+add_executable(TestPrimeFactor "Project Euler/Problem 03/3. Largest Prime Factor.cpp")
 
 foreach(SRC ${ALL_CPP_FILES})
     # Get path like "Project Euler/Problem 1/1. Multiples of 3 or 5.cpp"
