@@ -13,4 +13,4 @@ Project Euler
         |- Problem Title.cpp
         |-readme.md (Containing the explanation/notes)    
 ```
-<br> Please note that these code implementations might not be the most optimized ones, I might add optimized solutions in the future, until then feel free to contribute optimized solutions.
+<br> Please note that these code implementations might not be the most optimized ones. These are just for solving the problems. I might add optimized solutions in the future, until then feel free to contribute optimized solutions.
