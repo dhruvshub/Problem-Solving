@@ -7,6 +7,10 @@
 #
 #add_executable(ProjectEuler_2 "Project Euler/Problem 2/2. Even Fibonacci Numbers.cpp")
 
+##############################
+# This file is AI generated. #
+##############################
+
 cmake_minimum_required(VERSION 3.31)
 project(Cpp)
 
