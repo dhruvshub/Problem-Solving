@@ -18,8 +18,11 @@ I might add optimized solutions in the future, until then feel free to contribut
 </strong>
 
 
-### How to use this repository?
+[//]: # (### How to use this repository?)
 
-You've probably stumbled on this repository because you need help with a problem.
-So, instead of looking at the solution directly I would advise to go to that problem's readme and see the explanation.
-And try to implement it in your own way.
+[//]: # ()
+[//]: # (You've probably stumbled on this repository because you need help with a problem.)
+
+[//]: # (So, instead of looking at the solution directly I would advise to go to that problem's readme and see the explanation.)
+
+[//]: # (And try to implement it in your own way.)
