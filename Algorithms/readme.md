@@ -1,0 +1,1 @@
+This directory contains some of the major algorithms and also a few of the algorithms which I find cool and awesome.
