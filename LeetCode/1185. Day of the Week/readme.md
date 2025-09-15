@@ -2,7 +2,7 @@
 
 Here is the [problem link](https://leetcode.com/problems/day-of-the-week/description/).
 
-I have solved this using Zeller's formula.
+I have solved this using Zeller's formula. (Yes, it takes care of leap years as well.)
 
 The formula is as follows:
 
