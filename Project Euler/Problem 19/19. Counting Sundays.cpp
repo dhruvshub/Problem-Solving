@@ -63,5 +63,4 @@ int count_sundays(int start, int end) {
 
 int main() {
     cout << count_sundays(1901, 2000);
-    cout << day_of_week(1, 12, 2000);
 }
