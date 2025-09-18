@@ -6,7 +6,7 @@ using namespace std;
 
 int trailingZeroes(int n) {
     int num_zeros = 0;
-    for (int i = 5; i < n; i*=5) {
+    for (int i = 5; i <= n; i*=5) {
         num_zeros += n/i;
     }
     return num_zeros;
