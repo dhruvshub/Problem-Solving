@@ -4,7 +4,7 @@ Problem Link: [LeetCode](https://leetcode.com/problems/factorial-trailing-zeroes
 
 
 $$
-n! = n*(n-1)*(n-2)*(n-3) .... 1
+n! = n\times(n-1)\times(n-2)\times(n-3) .... \times1
 $$
 
 
