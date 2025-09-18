@@ -34,7 +34,8 @@ $$
 \nu_5(n!) = \sum_{i=1}^k \left \lfloor \frac{n}{5^i} \right \rfloor
 $$
 
-This becomes,
+This becomes,  
+
 $$
 \nu_5(n!) = \left \lfloor \frac{n}{5^1} \right \rfloor + \left \lfloor \frac{n}{5^2} \right \rfloor + \left \lfloor \frac{n}{5^3} \right \rfloor + .......
 $$
