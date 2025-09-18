@@ -2,9 +2,12 @@
 
 Problem Link: [LeetCode](https://leetcode.com/problems/factorial-trailing-zeroes/description/)
 
+
 $$
 n! = n*(n-1)*(n-2)*(n-3) .... 1
 $$
+
+
 The naive or brute force method to solve this is by finding the factorial first and then counting the number of zeroes.
 This is straightforward but is computationally expensive and after a certain point the factorial calculated won't be able to fit in the integer data type in C++ as well.
 
