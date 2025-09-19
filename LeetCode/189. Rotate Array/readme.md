@@ -4,6 +4,8 @@ Problem Link: [LeetCode](https://leetcode.com/problems/rotate-array/description/
 
 ### Naive Solution
 
+**Note:** `k % nums.size()` makes `k <= nums.size()` which significantly reduces the number of operations for larger values of k. 
+
 The first and the most basic solution is to just run a loop and do right shifts. This does not work for longer array.
 
 ```c++
