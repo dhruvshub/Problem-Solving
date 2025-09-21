@@ -1,40 +1,39 @@
-#cmake_minimum_required(VERSION 3.31)
-#project(Cpp)
-#
-#set(CMAKE_CXX_STANDARD 14)
-#
-#add_executable(ProjectEuler_1 "Project Euler/Problem 1/1. Multiples of 3 or 5.cpp")
-#
-#add_executable(ProjectEuler_2 "Project Euler/Problem 2/2. Even Fibonacci Numbers.cpp")
-
-##############################
-# This file is AI generated. #
-##############################
-
 cmake_minimum_required(VERSION 3.31)
-project(Cpp)
+project(Cpp CXX)
 
-set(CMAKE_CXX_STANDARD 14)
+set(CMAKE_CXX_STANDARD 23)
+set(CMAKE_CXX_STANDARD_REQUIRED ON)
+set(CMAKE_CXX_EXTENSIONS OFF)
 
-# Recursively find all .cpp files (only the main.cpp-like solutions)
 file(GLOB_RECURSE ALL_CPP_FILES
+        "Algorithms/*/*.cpp"
+        "LeetCode/*/*.cpp"
         "Project Euler/Problem */*.cpp"
-        "LeetCode/Problem */*.cpp"
         "CodeForces/Round */Problem */*.cpp"
         "Awesome Cpp Projects/*/*.cpp"
 )
-add_executable(TestPrimeFactor "Project Euler/Problem 03/3. Largest Prime Factor.cpp")
 
 foreach(SRC ${ALL_CPP_FILES})
-    # Get path like "Project Euler/Problem 1/1. Multiples of 3 or 5.cpp"
-    get_filename_component(FILE_NAME ${SRC} NAME_WE)        # e.g., "1. Multiples of 3 or 5"
-    get_filename_component(DIR_PATH ${SRC} DIRECTORY)       # e.g., "Project Euler/Problem 1"
-    string(REPLACE "/" "_" TARGET_NAME "${DIR_PATH}_${FILE_NAME}") # e.g., Project_Euler_Problem_1_1._Multiples_of_3_or_5
+    # Get the full filename with extension, then manually remove .cpp
+    get_filename_component(FULL_NAME ${SRC} NAME)
 
-    # Replace spaces and dots (not allowed in CMake target names)
-    string(REPLACE " " "_" TARGET_NAME ${TARGET_NAME})
-    string(REPLACE "." "_" TARGET_NAME ${TARGET_NAME})
+    # Remove the .cpp extension manually to preserve the full name
+    string(REGEX REPLACE "\\.cpp$" "" FILE_NAME "${FULL_NAME}")
 
-    # Add the executable
+    # Now FILE_NAME will be "15. Lattice Paths" instead of just "15"
+    set(TARGET_NAME "${FILE_NAME}")
+
+    # Clean up for valid CMake target names
+    string(REPLACE " " "_" TARGET_NAME "${TARGET_NAME}")
+    string(REPLACE "." "_" TARGET_NAME "${TARGET_NAME}")
+    string(REPLACE "(" "_" TARGET_NAME "${TARGET_NAME}")
+    string(REPLACE ")" "_" TARGET_NAME "${TARGET_NAME}")
+    string(REPLACE "," "_" TARGET_NAME "${TARGET_NAME}")
+    string(REPLACE "+" "plus" TARGET_NAME "${TARGET_NAME}")
+    string(REPLACE "-" "_" TARGET_NAME "${TARGET_NAME}")
+    string(REPLACE "^" "_power_" TARGET_NAME "${TARGET_NAME}")
+    string(REGEX REPLACE "_+" "_" TARGET_NAME "${TARGET_NAME}")
+    string(REGEX REPLACE "^_+|_+$" "" TARGET_NAME "${TARGET_NAME}")
+
     add_executable(${TARGET_NAME} ${SRC})
 endforeach()
