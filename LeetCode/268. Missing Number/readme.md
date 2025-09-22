@@ -28,8 +28,11 @@ This is a rather clever approach and I found it in the discussions. Here the pro
 ```c++
 int missingNumber(vector<int>& nums) {
     int bitwise_xor = 0;
-    for (int i = 0; i<nums.size(); ++i) {
-        bitwise_xor^=nums[i];
+    for (int i = 0; i<=nums.size(); ++i) {
+        bitwise_xor^=i;
+        if(i!=nums.size()){
+            bitwise_xor^=nums[i];
+        }
     }
     return bitwise_xor;
 }

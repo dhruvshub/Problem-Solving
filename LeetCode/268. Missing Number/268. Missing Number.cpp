@@ -7,8 +7,11 @@ using namespace std;
 
 int missingNumber(vector<int>& nums) {
     int bitwise_xor = 0;
-    for (int i = 0; i<nums.size(); ++i) {
-        bitwise_xor^=nums[i];
+    for (int i = 0; i<=nums.size(); ++i) {
+        bitwise_xor^=i;
+        if(i!=nums.size()){
+            bitwise_xor^=nums[i];
+        }
     }
     return bitwise_xor;
 }
